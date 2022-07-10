@@ -34,7 +34,13 @@ const palette = palettron([
  * - Pick every other color.
  * - Return an array of rgb string values.
  */
-const colors = palette.swap(0, 1).shift(1).darken(0.1).desaturate(0.2).pick([0, 2, 4]).toRgb()
+const colors = palette
+    .swap(0, 1)
+    .shift(1)
+    .darken(0.1)
+    .desaturate(0.2)
+    .pick([0, 2, 4])
+    .toRgb()
 /* [
     'rgb(20, 184, 184)',
     'rgb(184, 20, 20)',
