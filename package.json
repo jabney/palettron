@@ -1,0 +1,35 @@
+{
+  "name": "palettron",
+  "version": "0.1.0",
+  "description": "Manipulate palettes of colors in wonderful ways",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabney/palettron.git"
+  },
+  "keywords": [
+    "palette",
+    "color",
+    "colord",
+    "css",
+    "chart"
+  ],
+  "author": "James Abney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jabney/palettron/issues"
+  },
+  "homepage": "https://github.com/jabney/palettron#readme",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "colord": "^2.9.2",
+    "seedable": "^1.0.5"
+  }
+}
