@@ -168,6 +168,6 @@ export class Palettron {
     toHsl = () => this.colors.map((c) => c.toHslString())
 }
 
-export const palettron = (p: readonly string[]) => {
+export const palettron = (p: readonly (string | Colord)[]) => {
     return new Palettron(p)
 }
