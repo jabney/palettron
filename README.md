@@ -25,12 +25,12 @@ const palette = palettron([
     "#00ffff",
 ])
 
-
 /**
  * - Swap the order of the first two colors.
  * - Shift the palette one index to the right, wrapping the last to the first.
  * - Darken the colors.
  * - Desaturate a bit.
+ * - Set the alpha.
  * - Pick every other color.
  * - Return an array of rgb string values.
  */
@@ -39,12 +39,13 @@ const colors = palette
     .shift(1)
     .darken(0.1)
     .desaturate(0.2)
+    .alpha(0.75)
     .pick([0, 2, 4])
     .toRgb()
 /* [
-    'rgb(20, 184, 184)',
-    'rgb(184, 20, 20)',
-    'rgb(184, 184, 20)',
+  'rgba(20, 184, 184, 0.75)',
+  'rgba(184, 20, 20, 0.75)',
+  'rgba(184, 184, 20, 0.75)',
 ] */
 ```
 
