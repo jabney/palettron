@@ -114,7 +114,7 @@ export class Palettron {
     /**
      * Slice a palette like an array.
      */
-    slice = (a: number, b: number) => new Palettron(this.colors.slice(a, b))
+    slice = (a?: number, b?: number) => new Palettron(this.colors.slice(a, b))
 
     /**
      * Replace one color in a palette with another given color.
