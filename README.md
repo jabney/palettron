@@ -98,6 +98,46 @@ rotate: (x: number) => Palettron;
 saturate: (x: number) => Palettron;
 
 /**
+ * Concatenate one or more palettes with this one.
+ */
+concat: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
+
+/**
+ * Filter colors using the underlying Colord object.
+ */
+filter: (cb: (color: Colord, index: number, array: readonly Colord[]) => boolean) => Palettron;
+
+/**
+ * Map colors using the underlying Colord object.
+ */
+map: (cb: (color: Colord, index: number, array: readonly Colord[]) => Colord | string) => Palettron;
+
+/**
+ * Merge one or more palettes with this one, removing duplicates.
+ */
+merge: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
+
+/**
+ * Modify a specific color in a palette as a Colord object.
+ */
+modify: (indices: number | readonly number[], cb: (c: Colord) => Colord) => Palettron;
+
+/**
+ * Reduce a palette to the specified indicies.
+ */
+pick: (indices: number | readonly number[]) => Palettron;
+
+/**
+ * Replace one color in a palette with another given color.
+ */
+replace: (index: number, color: string | Colord) => Palettron;
+
+/**
+ * Reverse the order of items in a palette.
+ */
+reverse: () => Palettron;
+
+/**
  * Randomly shuffle the palette based on a random seed.
  */
 shuffle: (seed?: number | string) => Palettron;
@@ -108,59 +148,19 @@ shuffle: (seed?: number | string) => Palettron;
 shift: (x: number) => Palettron;
 
 /**
- * Swap two items in a palette by index.
- */
-swap: (a: number, b: number) => Palettron;
-
-/**
- * Reverse the order of items in a palette.
- */
-reverse: () => Palettron;
-
-/**
- * Reduce a palette to the specified indicies.
- */
-pick: (indices: number | readonly number[]) => Palettron;
-
-/**
  * Slice a palette like an array.
  */
-slice: (a: number, b: number) => Palettron;
-
-/**
- * Replace one color in a palette with another given color.
- */
-replace: (index: number, color: string | Colord) => Palettron;
-
-/**
- * Modify a specific color in a palette as a Colord object.
- */
-modify: (indices: number | number[], cb: (c: Colord) => Colord) => Palettron;
-
-/**
- * Concatenate one or more palettes with this one.
- */
-concat: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
-
-/**
- * Merge one or more palettes with this one, removing duplicates.
- */
-merge: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
-
-/**
- * Map colors using the underlying Colord object.
- */
-map: (cb: (color: Colord, index: number, array: readonly Colord[]) => Colord | string) => Palettron;
-
-/**
- * Filter colors using the underlying Colord object.
- */
-filter: (cb: (color: Colord, index: number, array: readonly Colord[]) => boolean) => Palettron;
+slice: (a?: number, b?: number) => Palettron;
 
 /**
  * Sort a palette based on its underlying Colord object.
  */
 sort: (cb: (a: Colord, b: Colord) => number) => Palettron;
+
+/**
+ * Swap two items in a palette by index.
+ */
+swap: (a: number, b: number) => Palettron;
 
 /**
  * Return the palette as an array of css hex string values.
