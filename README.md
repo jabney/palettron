@@ -143,6 +143,11 @@ modify: (indices: number | number[], cb: (c: Colord) => Colord) => Palettron;
 concat: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
 
 /**
+ * Merge one or more palettes with this one, removing duplicates.
+ */
+merge: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
+
+/**
  * Map colors using the underlying Colord object.
  */
 map: (cb: (color: Colord, index: number, array: readonly Colord[]) => Colord | string) => Palettron;

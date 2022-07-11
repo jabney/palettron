@@ -14,6 +14,21 @@ export const concat = (...palettes: readonly (Palettron | readonly string[])[]) 
     )
 }
 
+/**
+ * Merge two or more palettes, removing duplicates.
+ */
+export const merge = (...palettes: readonly (Palettron | readonly string[])[]) => {
+    const set = new Set(
+        palettes.reduce((list: string[], palette) => {
+            const values =
+                palette instanceof Palettron ? palette.colors.map((c) => c.toHex()) : new Palettron(palette).toHex()
+            list.push(...values)
+            return list
+        }, [] as string[])
+    )
+    return new Palettron([...set])
+}
+
 export class Palettron {
     readonly colors: readonly Colord[]
 
@@ -136,6 +151,13 @@ export class Palettron {
      */
     concat = (...palettes: readonly (Palettron | readonly string[])[]) => {
         return concat(this, ...palettes)
+    }
+
+    /**
+     * Merge one or more palettes with this one, removing duplicates.
+     */
+    merge = (...palettes: readonly (Palettron | readonly string[])[]) => {
+        return merge(this, ...palettes)
     }
 
     /**
