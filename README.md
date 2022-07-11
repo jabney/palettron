@@ -158,6 +158,11 @@ map: (cb: (color: Colord, index: number, array: readonly Colord[]) => Colord | s
 filter: (cb: (color: Colord, index: number, array: readonly Colord[]) => boolean) => Palettron;
 
 /**
+ * Sort a palette based on its underlying Colord object.
+ */
+sort: (cb: (a: Colord, b: Colord) => number) => Palettron;
+
+/**
  * Return the palette as an array of css hex string values.
  */
 toHex: () => string[];

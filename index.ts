@@ -175,6 +175,13 @@ export class Palettron {
     }
 
     /**
+     * Sort a palette based on its underlying Colord object.
+     */
+    sort = (cb: (a: Colord, b: Colord) => number) => {
+        return new Palettron(this.colors.slice().sort(cb))
+    }
+
+    /**
      * Return the palette as an array of css hex string values.
      */
     toHex = () => this.colors.map((c) => c.toHex())
