@@ -1,6 +1,6 @@
 {
   "name": "palettron",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Manipulate palettes of colors in wonderful ways",
   "main": "dist/index.js",
   "scripts": {
