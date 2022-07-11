@@ -126,7 +126,7 @@ export class Palettron {
     /**
      * Modify a specific color in a palette as a Colord object.
      */
-    modify = (indices: number | number[], cb: (c: Colord) => Colord) => {
+    modify = (indices: number | readonly number[], cb: (c: Colord) => Colord) => {
         const _indices = new Set(Array.isArray(indices) ? indices : [indices])
         return new Palettron(this.colors.map((c, i) => (_indices.has(i) ? cb(c) : c)))
     }
