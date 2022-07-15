@@ -32,7 +32,7 @@ export const merge = (...palettes: readonly (Palettron | readonly string[])[]) =
 export class Palettron {
     readonly colors: readonly Colord[]
 
-    constructor(colors: readonly (string | Colord)[]) {
+    constructor(colors: readonly (string | Colord)[] = []) {
         this.colors = Object.freeze(colors.map((c) => (c instanceof Colord ? c : new Colord(c))))
     }
 
@@ -211,6 +211,6 @@ export class Palettron {
     toHsl = () => this.colors.map((c) => c.toHslString())
 }
 
-export const palettron = (p: readonly (string | Colord)[]) => {
+export const palettron = (p: readonly (string | Colord)[] = []) => {
     return new Palettron(p)
 }
