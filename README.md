@@ -55,7 +55,7 @@ const colors = palette
 /**
  * The number of colors in the palette.
  */
-get length(): number;
+get size(): number;
 
 /**
  * Set the alpha of a palette.
@@ -98,9 +98,19 @@ rotate: (x: number) => Palettron;
 saturate: (x: number) => Palettron;
 
 /**
+ * Add one or more colors to the palette.
+ */
+add: (...colors: readonly (Colord | string)[]) => Palettron;
+
+/**
  * Concatenate one or more palettes with this one.
  */
 concat: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
+
+/**
+ * Iterate each Colord object in the palette.
+ */
+each: (cb: (color: Colord, index: number, array: readonly Colord[]) => void) => void;
 
 /**
  * Filter colors using the underlying Colord object.
