@@ -91,6 +91,13 @@ export class Palettron {
     }
 
     /**
+     * Iterate each Colord object in the palette.
+     */
+    each = (cb: (color: Colord, index: number, array: readonly Colord[]) => void) => {
+        this.colors.forEach(cb)
+    }
+
+    /**
      * Filter colors using the underlying Colord object.
      */
     filter = (cb: (color: Colord, index: number, array: readonly Colord[]) => boolean) => {
