@@ -39,7 +39,7 @@ export class Palettron {
     /**
      * The number of colors in the palette.
      */
-    get length(): number {
+    get size(): number {
         return this.colors.length
     }
 
