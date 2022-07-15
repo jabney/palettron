@@ -218,6 +218,6 @@ export class Palettron {
     }
 }
 
-export const palettron = (p: readonly (string | Colord)[] = []) => {
-    return new Palettron(p)
+export const palettron = (...p: readonly (readonly (string | Colord)[])[]) => {
+    return new Palettron(p.flat())
 }
