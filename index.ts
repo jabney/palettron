@@ -84,6 +84,13 @@ export class Palettron {
     saturate = (x: number) => new Palettron(this.colors.map((c) => c.saturate(x)))
 
     /**
+     * Add one or more colors to the palette.
+     */
+    add = (...colors: readonly (Colord | string)[]) => {
+        return new Palettron([...this.colors, ...colors])
+    }
+
+    /**
      * Concatenate one or more palettes with this one.
      */
     concat = (...palettes: readonly (Palettron | readonly string[])[]) => {
