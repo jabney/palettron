@@ -186,4 +186,9 @@ toRgb: () => string[];
  * Return the palette as an array of css hsl string values.
  */
 toHsl: () => string[];
+
+/**
+ * Convert colors in the palette to an array of arbitrary values.
+ */
+toAny: <T>(cb: (color: Colord, index: number, array: readonly Colord[]) => T) => T[];
 ```

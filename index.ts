@@ -209,6 +209,13 @@ export class Palettron {
      * Return the palette as an array of css hsl string values.
      */
     toHsl = () => this.colors.map((c) => c.toHslString())
+
+    /**
+     * Convert colors in the palette to an array of arbitrary values.
+     */
+    toAny = <T>(cb: (color: Colord, index: number, array: readonly Colord[]) => T): T[] => {
+        return this.colors.map(cb)
+    }
 }
 
 export const palettron = (p: readonly (string | Colord)[] = []) => {
