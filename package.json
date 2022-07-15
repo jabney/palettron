@@ -4,9 +4,10 @@
   "description": "Manipulate palettes of colors in wonderful ways",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc",
+    "clean": "rm -f index.js index.d.ts",
     "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap --ts"
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,12 @@
   "dependencies": {
     "colord": "^2.9.2",
     "seedable": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@types/tap": "^15.0.7",
+    "tap": "^16.3.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
   }
 }
