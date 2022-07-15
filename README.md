@@ -130,7 +130,7 @@ merge: (...palettes: readonly (Palettron | readonly string[])[]) => Palettron;
 /**
  * Modify a specific color in a palette as a Colord object.
  */
-modify: (indices: number | readonly number[], cb: (c: Colord) => Colord) => Palettron;
+modify: (indices: number | readonly number[], cb: (c: Colord, index: number) => Colord) => Palettron;
 
 /**
  * Reduce a palette to the specified indicies.
