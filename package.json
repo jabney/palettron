@@ -7,8 +7,8 @@
     "build": "npm run clean && tsc",
     "clean": "rm -f index.js index.d.ts",
     "prepare": "npm run test",
-    "test": "npm run build && tap --ts",
-    "test-ts": "npm run clean && tap --ts"
+    "test": "npm run build && tap --ts --no-check-coverage",
+    "test-ts": "npm run clean && tap --ts --no-check-coverage"
   },
   "repository": {
     "type": "git",
