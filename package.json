@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && tsc",
+    "cover": "tap --ts --coverage-report=html --no-browser",
     "clean": "rm -f index.js index.d.ts",
     "prepare": "npm run test",
-    "test": "npm run build && tap --ts --no-check-coverage",
-    "test-ts": "npm run clean && tap --ts --no-check-coverage"
+    "test": "npm run build && tap --ts",
+    "test-ts": "npm run clean && tap --ts"
   },
   "repository": {
     "type": "git",
