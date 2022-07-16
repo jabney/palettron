@@ -227,3 +227,74 @@ tap.test("Sorts a palette", async (t) => {
         colors.map((c) => c.toHex())
     )
 })
+
+tap.test("Reverses a palette", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(p.reverse().toHex(), primary.slice().reverse())
+})
+
+tap.test("Adds color alpha", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.alpha(0.5).toHex(),
+        primary.map((c) => new Colord(c).alpha(0.5).toHex())
+    )
+})
+
+tap.test("Darkens colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.darken(0.25).toHex(),
+        primary.map((c) => new Colord(c).darken(0.25).toHex())
+    )
+})
+
+tap.test("Desaturates colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.desaturate(0.25).toHex(),
+        primary.map((c) => new Colord(c).desaturate(0.25).toHex())
+    )
+})
+
+tap.test("Grayscales colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.grayscale().toHex(),
+        primary.map((c) => new Colord(c).grayscale().toHex())
+    )
+})
+
+tap.test("Inverts colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.invert().toHex(),
+        primary.map((c) => new Colord(c).invert().toHex())
+    )
+})
+
+tap.test("Lightens colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.lighten(0.25).toHex(),
+        primary.map((c) => new Colord(c).lighten(0.25).toHex())
+    )
+})
+
+tap.test("Rotates colors", async (t) => {
+    const p = palettron(primary)
+    t.strictSame(
+        p.rotate(90).toHex(),
+        primary.map((c) => new Colord(c).rotate(90).toHex())
+    )
+})
+
+tap.test("Saturates colors", async (t) => {
+    const colors = primary.map((c) => new Colord(c).desaturate(0.25))
+    const p = palettron(colors)
+
+    t.strictSame(
+        p.saturate(0.1).toHex(),
+        colors.map((c) => c.saturate(0.1).toHex())
+    )
+})
